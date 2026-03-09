@@ -262,7 +262,7 @@ fn_query_tcp() {
 
 fn_monitor_query() {
 	# Will loop and query up to 5 times every 15 seconds.
-	# Query will wait up to 30 seconds to confirm server is down as server can become non-responsive during map changes.
+	# Query will wait up to 60 seconds to confirm server is down as server can become non-responsive during map changes.
 	totalseconds=0
 	for queryattempt in {1..5}; do
 		for queryip in "${queryips[@]}"; do
@@ -326,10 +326,10 @@ fn_monitor_query() {
 				fn_print_fail "Querying port: ${querymethod}: ${queryip}:${queryport} : ${totalseconds}/${queryattempt}"
 				fn_print_fail_eol
 				fn_script_log_warn "Querying port: ${querymethod}: ${queryip}:${queryport} : ${queryattempt} : FAIL"
-				# Monitor will try gamedig (if supported) for first 15s then gsquery before restarting.
-				# gsquery will fail if longer than 30s
-				if [ "${totalseconds}" -ge "29" ]; then
-					# Monitor will FAIL if over 30s and trigger game server reboot.
+				# Monitor will try gamedig (if supported) for first 30s then gsquery before restarting.
+				# gsquery will fail if longer than 60s
+				if [ "${totalseconds}" -ge "59" ]; then
+					# Monitor will FAIL if over 60s and trigger gane server reboot.
 					fn_print_fail "Querying port: ${querymethod}: ${queryip}:${queryport} : ${totalseconds}/${queryattempt}"
 					fn_print_fail_eol_nl
 					fn_script_log_warn "Querying port: ${querymethod}: ${queryip}:${queryport} : ${queryattempt} : FAIL"
