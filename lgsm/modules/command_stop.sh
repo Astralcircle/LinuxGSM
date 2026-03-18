@@ -323,7 +323,7 @@ fn_stop_graceful_select() {
 	elif [ "${stopmode}" == "2" ]; then
 		fn_stop_graceful_ctrlc
 	elif [ "${stopmode}" == "3" ]; then
-		fn_stop_graceful_cmd "quit keep_players" 15
+		fn_stop_graceful_cmd "quit keep_players" 30
 	elif [ "${stopmode}" == "4" ]; then
 		fn_stop_graceful_cmd "quit" 120
 	elif [ "${stopmode}" == "5" ]; then
