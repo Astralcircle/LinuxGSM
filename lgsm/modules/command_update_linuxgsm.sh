@@ -111,7 +111,7 @@ if [ "${script_diff}" != "" ]; then
 			-e "s+shortname=\"core\"+shortname=\"${shortname}\"+g" \
 			-e "s+gameservername=\"core\"+gameservername=\"${gameservername}\"+g" \
 			-e "s+gamename=\"core\"+gamename=\"${gamename}\"+g" \
-			-e "s+githubuser=\"GameServerManagers\"+githubuser=\"${githubuser}\"+g" \
+			-e "s+githubuser=\"Astralcircle\"+githubuser=\"${githubuser}\"+g" \
 			-e "s+githubrepo=\"LinuxGSM\"+githubrepo=\"${githubrepo}\"+g" \
 			-e "s+githubbranch=\"master\"+githubbranch=\"${githubbranch}\"+g" \
 			"${tmpdir}/${selfname}.update"
